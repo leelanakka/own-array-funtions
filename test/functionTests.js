@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {map,filter} = require('../src/lib.js');
+const {map,filter,reduce} = require('../src/lib.js');
 
 const square = function(number){
   return number*number;
@@ -7,6 +7,14 @@ const square = function(number){
 
 const increment = function(number){
   return number+1;
+}
+
+const sum = function(num1,num2){
+  return num1+num2;
+}
+
+const multiplication = function(num1,num2){
+  return num1*num2;
 }
 
 const isEven = function(number){
@@ -49,5 +57,19 @@ describe('filter',function(){
   });
   it('should filter positive integers',function(){
     assert.deepEqual(filter([1,2,3],isNumberPositive),[1,2,3]);
+  });
+});
+
+describe('reduce',function(){
+  it('should sum the all numbers',function(){
+    assert.equal(reduce([1,2],sum),3);
+    assert.equal(reduce([1,2,3],sum),6);
+    assert.equal(reduce([2,4,6,8],sum),20);
+  });
+  it('should multiply the numbers',function(){
+    assert.equal(reduce([1,2],multiplication),2);
+    assert.equal(reduce([3,2],multiplication),6);
+    assert.equal(reduce([3,2,2],multiplication),12);
+    assert.equal(reduce([3,2,2,10],multiplication),120);
   });
 });

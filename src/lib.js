@@ -16,4 +16,16 @@ const filter = function(array,func){
   }
   return resultArray;
 }
-module.exports = { map,filter};
+
+const reduce = function(array,func){
+  let result = 0;
+  for(let index = 0; index < array.length ; index++){
+    if(array[index+1]){
+      result = func(array[index],array[index+1]);
+      array[index+1] = result;
+    }
+  }
+  return result;
+}
+
+module.exports = { map,filter,reduce};
