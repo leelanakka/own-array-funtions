@@ -32,9 +32,11 @@ describe('map',function(){
   it('should take empty array and return the empty array',function(){
     assert.deepEqual(map(square,[]),[]);
   });
-  // it('should map the increment of numbers',function(){
+  it('should take array of one element and return the array of one element',function(){
     assert.deepEqual(map(increment,[1]),[2]);
-    assert.deepEqual(map(increment,[0]),[1]);
+  });
+  it('should retrun the same length of array', function(){
+    assert.deepEqual(map(increment,[1,2,3,4,5]),[2,3,4,5,6]);
   });
 });
 
