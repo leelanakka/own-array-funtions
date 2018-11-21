@@ -32,7 +32,7 @@ describe('map',function(){
   it('should take empty array and return the empty array',function(){
     assert.deepEqual(map(square,[]),[]);
   });
-  it('should map the increment of numbers',function(){
+  // it('should map the increment of numbers',function(){
     assert.deepEqual(map(increment,[1]),[2]);
     assert.deepEqual(map(increment,[0]),[1]);
   });
