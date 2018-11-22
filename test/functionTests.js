@@ -1,33 +1,20 @@
 const assert = require('assert');
 const {map,filter,reduce} = require('../src/lib.js');
 
-const square = function(number){
-  return number*number;
-}
+const square = number => number*number;
 
-const increment = function(number){
-  return number+1;
-}
+const increment = number => number +1;
 
-const sum = function(num1,num2){
-  return num1+num2;
-}
+const sum = (num1,num2) => num1+num2;
 
-const multiplication = function(num1,num2){
-  return num1*num2;
-}
+const multiplication = (num1,num2) => num1*num2;
 
-const isEven = function(number){
-  return number%2==0;
-}
+const isEven = number => number%2==0;
 
-const isOdd = function(number){
-  return !(isEven(number));
-}
+const isOdd = number => !(isEven(number));
 
-const isNumberPositive = function(number){
-  return number >= 0;
-}
+const isNumberPositive = number => number >= 0
+
 describe('map',function(){
   it('should take empty array and return the empty array',function(){
     assert.deepEqual(map(square,[]),[]);
